@@ -11,8 +11,8 @@ var downPressed = false;
 
 var showLevel = 1;
 var cLivesDefault = 1;
-var msgGameOver = '<span style="color: red">ВЫ ПРОИГРАЛИ</span>'; 
-var msgWin = '<span style="color: green">ПОБЕДА!<span>';
+var msgGameOver = 'ВЫ ПРОИГРАЛИ'; 
+var msgWin = 'ПОБЕДА!';
 var msgNextRound = 'Нажмите "Пробел" для перехода на Следующий Уровень'; 
 var msgNewGame = 'Нажмите "Пробел", чтобы начать Новую Игру';
 
@@ -372,24 +372,28 @@ function downColor(c){
 function endGame(i, msg1, msg2){
 	clearInterval(timer);
 	drawBall(i);
-	if(gameWin == true){
+//	if(gameWin == true){
 		// если выйграли, очищаем экран
-		(function clrAfterWin(l){          
-			setTimeout(function(){   
-				ctx.clearRect(0, 0, canvas.width, canvas.height)
-				if(--l){
-					clrAfterWin(l);
-				}
-			}, 100)
-		})(maxBalls);
-	}
+//		(function clrAfterWin(l){          
+//			setTimeout(function(){   
+//				ctx.clearRect(0, 0, canvas.width, canvas.height)
+//				if(--l){
+//					clrAfterWin(l);
+//				}
+//			}, 100)
+//		})(maxBalls);
+//	}
 	document.getElementById('textbox1').innerHTML=msg1;
 	document.getElementById('textbox2').innerHTML=msg2;
+  document.getElementById('textbox_main').classList.remove("hide_elem");
 }
 
 function clearMsg(){
-	document.getElementById('textbox1').innerHTML="";
-	document.getElementById('textbox2').innerHTML="";
+  document.getElementById('textbox1').innerHTML="";
+  document.getElementById('textbox2').innerHTML="";
+  document.getElementById('textbox3').innerHTML="";
+  document.getElementById('textbox_main').classList.add("hide_elem");
+  document.getElementById('window_score').classList.remove("hide_elem");
 }
 
 // Дергаем ф-цию draw() каждые "interval" мс

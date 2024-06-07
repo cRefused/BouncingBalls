@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Bouncing Balls</title>
-	<link rel="stylesheet" href="style.css">
-    <style>
-    </style>
+  <meta charset="utf-8" />
+  <title>Game</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
 </head>
 <body>
-<table class="table">
-<tr>
-<td>
-<canvas id="myCanvas"  width="640" height="400" class="canvas"></canvas>
-</td>
-<td class="score">
-	Stage: <span id="stage"></span> 
-	<br>
-	Score: <span id="score"></span>
-	<br>
-	Lives: <span id="lives"></span>
-</td>
-<tr>
-<td style="text-align: center;">
-<span id="textbox1" style="font: bold 20px sans-serif;"></span>
-<br>
-<span id="textbox2" style="font: 13px sans-serif;"></span>
-</td>
-<td>
-</td>
+<div class="window_game" id="window_game">
+  <canvas id="myCanvas" width="640" height="480" class="canvas"></canvas>
+  <div class="score hide_elem" id="window_score">
+    <span class="score_info">уровень: <span id="stage"></span></span>
+    <span class="score_info">очки: <span id="score"></span></span>
+    <span class="score_info">жизни: <span id="lives"></span></span>
+    <!-- <span class="score_info">жизни: <span id="lives"></span></span> -->
+  </div>
+  <div class="textbox_main" id="textbox_main">
+    <span id="textbox1" style="font: bold 22px sans-serif;"></span>
+    <br><br>
+    <span id="textbox2" style="font: bold 18px sans-serif;"></span>
+    <br><br>
+    <span id="textbox3" style="font: 15px sans-serif;"></span>
+  </div>
+</div>
 <script src="./js/base.js"></script>
 
 </body>
